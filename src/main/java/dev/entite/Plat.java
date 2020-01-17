@@ -3,7 +3,8 @@ package dev.entite;
 import java.util.Objects;
 
 public class Plat {
-
+	
+	private int id;
     private String nom;
     private Integer prixEnCentimesEuros;
 
@@ -15,7 +16,12 @@ public class Plat {
         this.prixEnCentimesEuros = prixEnCentimesEuros;
     }
 
-    public String getNom() {
+    public Plat(int id, String nom, Integer prixEnCentimesEuros) {
+		this(nom, prixEnCentimesEuros);
+		this.prixEnCentimesEuros = prixEnCentimesEuros;
+	}
+
+	public String getNom() {
         return nom;
     }
 
@@ -31,7 +37,21 @@ public class Plat {
         this.prixEnCentimesEuros = prixEnCentimesEuros;
     }
 
-    @Override
+    /**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -43,4 +63,12 @@ public class Plat {
     public int hashCode() {
         return Objects.hash(nom);
     }
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Plat [id=" + id + ", nom=" + nom + ", prixEnCentimesEuros=" + prixEnCentimesEuros + "]";
+	}
 }

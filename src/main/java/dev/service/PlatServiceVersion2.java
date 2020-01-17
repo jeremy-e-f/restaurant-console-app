@@ -14,7 +14,7 @@ public class PlatServiceVersion2 implements IPlatService {
 	
     private IPlatDao dao;
 
-    public PlatServiceVersion2(@Qualifier("platDaoMemoire") IPlatDao dao) {
+    public PlatServiceVersion2(@Qualifier("platDaoJdbc") IPlatDao dao) {
         this.dao = dao;
     }
 
@@ -32,7 +32,7 @@ public class PlatServiceVersion2 implements IPlatService {
             throw new PlatException("un plat doit avoir un nom de plus de 5 caractères");
         }
 
-        if (prixPlat <= 10000) {
+        if (prixPlat <= 1000) {
             throw new PlatException("le prix d'un plat doit être supérieur à 10 €");
         }
 
