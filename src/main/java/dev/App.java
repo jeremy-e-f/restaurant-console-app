@@ -19,8 +19,6 @@ public class App {
     	  // Création du contexte Spring à partir d'une configuration Java
     	  AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
     	  
-    	  
-    	  
     	  // récupération du bean Menu
     	  Menu menu = context.getBean(Menu.class);
     	  menu.afficher();

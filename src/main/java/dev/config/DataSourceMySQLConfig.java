@@ -1,4 +1,4 @@
-package dev;
+package dev.config;
 
 import javax.sql.DataSource;
 
@@ -15,7 +15,7 @@ public class DataSourceMySQLConfig {
 	public DataSource dataSource() {
 		
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setDriverClassName("org.mariadb.jdbc.Driver");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/restaurant-bdd?useSSL=false");
 		dataSource.setUsername("root");
 		dataSource.setPassword("");
